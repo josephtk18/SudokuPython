@@ -1,0 +1,173 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'ventana_principal.ui'
+#
+# Created: Sat Jul 20 15:40:57 2013
+#      by: PyQt4 UI code generator 4.10.2
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt4 import QtCore, QtGui
+
+try:
+    _fromUtf8 = QtCore.QString.fromUtf8
+except AttributeError:
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
+
+class Ui_Ventana_principal(object):
+    def setupUi(self, Ventana_principal):
+        Ventana_principal.setObjectName(_fromUtf8("Ventana_principal"))
+        Ventana_principal.resize(399, 426)
+        self.centralwidget = QtGui.QWidget(Ventana_principal)
+        self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
+        self.Titulo = QtGui.QLabel(self.centralwidget)
+        self.Titulo.setGeometry(QtCore.QRect(70, 20, 261, 91))
+        palette = QtGui.QPalette()
+        brush = QtGui.QBrush(QtGui.QColor(0, 140, 140))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.WindowText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 140, 140))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Text, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 140, 140))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.WindowText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 140, 140))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Text, brush)
+        brush = QtGui.QBrush(QtGui.QColor(112, 111, 113))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.WindowText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(112, 111, 113))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Text, brush)
+        self.Titulo.setPalette(palette)
+        self.Titulo.setObjectName(_fromUtf8("Titulo"))
+        self.Btn_Iniciar = QtGui.QPushButton(self.centralwidget)
+        self.Btn_Iniciar.setGeometry(QtCore.QRect(140, 130, 141, 31))
+        palette = QtGui.QPalette()
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.WindowText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Text, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 140, 140))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.ButtonText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.WindowText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Text, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 140, 140))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ButtonText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(112, 111, 113))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.WindowText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(112, 111, 113))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Text, brush)
+        brush = QtGui.QBrush(QtGui.QColor(112, 111, 113))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ButtonText, brush)
+        self.Btn_Iniciar.setPalette(palette)
+        self.Btn_Iniciar.setObjectName(_fromUtf8("Btn_Iniciar"))
+        self.Btn_estadisticas = QtGui.QPushButton(self.centralwidget)
+        self.Btn_estadisticas.setGeometry(QtCore.QRect(140, 180, 141, 31))
+        palette = QtGui.QPalette()
+        brush = QtGui.QBrush(QtGui.QColor(0, 140, 140))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.ButtonText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 140, 140))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ButtonText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(112, 111, 113))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ButtonText, brush)
+        self.Btn_estadisticas.setPalette(palette)
+        self.Btn_estadisticas.setObjectName(_fromUtf8("Btn_estadisticas"))
+        self.Btn_acercaDe = QtGui.QPushButton(self.centralwidget)
+        self.Btn_acercaDe.setGeometry(QtCore.QRect(140, 280, 141, 31))
+        palette = QtGui.QPalette()
+        brush = QtGui.QBrush(QtGui.QColor(0, 140, 140))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.ButtonText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 140, 140))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ButtonText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(112, 111, 113))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ButtonText, brush)
+        self.Btn_acercaDe.setPalette(palette)
+        self.Btn_acercaDe.setObjectName(_fromUtf8("Btn_acercaDe"))
+        self.Btn_Salir = QtGui.QPushButton(self.centralwidget)
+        self.Btn_Salir.setGeometry(QtCore.QRect(140, 330, 141, 31))
+        palette = QtGui.QPalette()
+        brush = QtGui.QBrush(QtGui.QColor(0, 140, 140))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.ButtonText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 140, 140))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ButtonText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(112, 111, 113))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ButtonText, brush)
+        self.Btn_Salir.setPalette(palette)
+        self.Btn_Salir.setObjectName(_fromUtf8("Btn_Salir"))
+        self.Btn_Ayuda = QtGui.QPushButton(self.centralwidget)
+        self.Btn_Ayuda.setGeometry(QtCore.QRect(140, 230, 141, 31))
+        palette = QtGui.QPalette()
+        brush = QtGui.QBrush(QtGui.QColor(0, 140, 140))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.ButtonText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 140, 140))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ButtonText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(112, 111, 113))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ButtonText, brush)
+        self.Btn_Ayuda.setPalette(palette)
+        self.Btn_Ayuda.setObjectName(_fromUtf8("Btn_Ayuda"))
+        Ventana_principal.setCentralWidget(self.centralwidget)
+        self.menubar = QtGui.QMenuBar(Ventana_principal)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 399, 20))
+        self.menubar.setObjectName(_fromUtf8("menubar"))
+        Ventana_principal.setMenuBar(self.menubar)
+        self.statusbar = QtGui.QStatusBar(Ventana_principal)
+        self.statusbar.setObjectName(_fromUtf8("statusbar"))
+        Ventana_principal.setStatusBar(self.statusbar)
+
+        self.retranslateUi(Ventana_principal)
+        QtCore.QMetaObject.connectSlotsByName(Ventana_principal)
+
+    def retranslateUi(self, Ventana_principal):
+        Ventana_principal.setWindowTitle(_translate("Ventana_principal", "MainWindow", None))
+        self.Titulo.setText(_translate("Ventana_principal", "<html><head/><body><p align=\"center\"><span style=\" font-size:36pt; font-weight:600; font-style:italic;\">Sudoku</span></p></body></html>", None))
+        self.Btn_Iniciar.setText(_translate("Ventana_principal", "Iniciar Partida", None))
+        self.Btn_estadisticas.setText(_translate("Ventana_principal", "Estadísticas", None))
+        self.Btn_acercaDe.setText(_translate("Ventana_principal", "Acerca De", None))
+        self.Btn_Salir.setText(_translate("Ventana_principal", "Salir", None))
+        self.Btn_Ayuda.setText(_translate("Ventana_principal", "Ayuda", None))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtGui.QApplication(sys.argv)
+    Ventana_principal = QtGui.QMainWindow()
+    ui = Ui_Ventana_principal()
+    ui.setupUi(Ventana_principal)
+    Ventana_principal.show()
+    sys.exit(app.exec_())
+
