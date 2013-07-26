@@ -5,10 +5,14 @@ Created on 20/07/2013
 
 @author: Charlie Medina
 '''
-
+import sys
 from PyQt4 import QtCore, QtGui 
 from Ui_ventana_principal import Ui_Ventana_principal
+from VentanaJugar import VentanaJugar
+from VentanaAyuda import VentanaAyuda
+from VentanaAcercaDe import VentanaAcercaDe
 import ctypes
+
  
 
 class VentanaPrincipal(QtGui.QMainWindow):
@@ -19,9 +23,30 @@ class VentanaPrincipal(QtGui.QMainWindow):
         self.setWindowTitle("PySudoku")
         self.setFixedHeight(self.height())
         self.setFixedWidth(self.width())
-        
+        self.connect(self.ventana.Btn_Iniciar,QtCore.SIGNAL('clicked()'), self.iniciar_partida)
+        #self.connect(self.ventana.Btn_estadisticas,QtCore.SIGNAL('clicked()'), self.estadisticas)
+        self.connect(self.ventana.Btn_acercaDe,QtCore.SIGNAL('clicked()'), self.acercade)
+        self.connect(self.ventana.Btn_Ayuda,QtCore.SIGNAL('clicked()'), self.ayuda)
         self.connect(self.ventana.Btn_Salir,QtCore.SIGNAL('clicked()'), self.salir)
+    
+    def iniciar_partida(self):
+        v = VentanaJugar()
+        v.show()
+        self.close() 
+        sys.exit(app.exec_())
         
+    def acercade(self):
+        v = VentanaAcercaDe()
+        v.show()
+        self.close() 
+        sys.exit(app.exec_())
+    
+    def ayuda(self):
+        v = VentanaAyuda()
+        v.show()
+        self.close() 
+        sys.exit(app.exec_())
+            
     def salir(self):
         messageBox = ctypes.windll.user32.MessageBoxA        
         salir = messageBox(None,'Seguro que desea salir?', 'Salir', 0x40 | 0x1)
