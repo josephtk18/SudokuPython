@@ -15,4 +15,3 @@ class VentanaAyuda(QtGui.QMainWindow):
         self.setWindowTitle("Ayuda")
         self.setFixedHeight(self.height())
         self.setFixedWidth(self.width())
-        #self.connect(self.ventana.Btn_Salir,QtCore.SIGNAL('clicked()'), self.salir)

@@ -5,7 +5,7 @@ Created on 20/07/2013
 
 @author: Charlie Medina
 '''
-import sys
+
 from PyQt4 import QtCore, QtGui 
 from Ui_ventana_principal import Ui_Ventana_principal
 from VentanaJugar import VentanaJugar
@@ -29,23 +29,18 @@ class VentanaPrincipal(QtGui.QMainWindow):
         self.connect(self.ventana.Btn_Ayuda,QtCore.SIGNAL('clicked()'), self.ayuda)
         self.connect(self.ventana.Btn_Salir,QtCore.SIGNAL('clicked()'), self.salir)
     
-    def iniciar_partida(self):
-        v = VentanaJugar()
-        v.show()
+    def iniciar_partida(self):        
+        self.v = VentanaJugar()
+        self.v.show()
         self.close() 
-        sys.exit(app.exec_())
         
     def acercade(self):
-        v = VentanaAcercaDe()
-        v.show()
-        self.close() 
-        sys.exit(app.exec_())
+        self.v = VentanaAcercaDe()
+        self.v.show()
     
     def ayuda(self):
-        v = VentanaAyuda()
-        v.show()
-        self.close() 
-        sys.exit(app.exec_())
+        self.v = VentanaAyuda()
+        self.v.show()
             
     def salir(self):
         messageBox = ctypes.windll.user32.MessageBoxA        

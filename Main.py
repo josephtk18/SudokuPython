@@ -6,8 +6,6 @@ Created on 20/07/2013
 import sys
 from PyQt4 import QtGui  
 from VentanaPrincipal import VentanaPrincipal
-from VentanaJugar import VentanaJugar
-
 
 if __name__ == '__main__':
     app=QtGui.QApplication(sys.argv)
