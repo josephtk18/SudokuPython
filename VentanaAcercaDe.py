@@ -3,7 +3,7 @@ Created on 26/07/2013
 
 @author: Charlie Medina
 '''
-import sys
+
 from PyQt4 import QtGui 
 from Ui_acercade import Ui_AcercaDe
 
