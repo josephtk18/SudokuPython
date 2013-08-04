@@ -17,9 +17,39 @@ class Casilla(QtGui.QLabel):
         self.region=region
         self.ocupada=True
         self.modificable=False
+        self.setGrafic(contenido)
         QtGui.QLabel.setMinimumSize(50,50)
         QtGui.QLabel.setVisible(True)
         
+    
+    def getContenido(self):
+        return self.contenido
+    def getFila(self):
+        return self.fila
+    def getColumna(self):
+        return self.columna
+    def getRegion(self):
+        return self.region
+    def isOcupada(self):
+        return self.ocupada
+    def isModificable(self):
+        return self.modificable
+    
+    def setContenido(self,cont):
+        self.contenido=cont
+    def setFila(self,fila):
+        self.fila=fila
+    def setColumna(self,col):
+        self.columna=col
+    def setRegion(self,reg):
+        self.region=reg
+    def setOcupada(self,ocup):
+        self.ocupada=ocup
+    def setModificable(self,mod):
+        self.modificable=mod
+    
+        
+    
     def setGrafic(self,cont):
         {'0':QtGui.QLabel.setPixmap(QtGui.QPixmap("Imagenes/0.jpg")),
          '1':QtGui.QLabel.setPixmap(QtGui.QPixmap("Imagenes/1.jpg")),
