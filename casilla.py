@@ -17,50 +17,20 @@ class Casilla(QtGui.QLabel):
         self.region=region
         self.ocupada=True
         self.modificable=False
-        self.setGrafic(contenido)
         QtGui.QLabel.setMinimumSize(50,50)
         QtGui.QLabel.setVisible(True)
         
-    
-    def getContenido(self):
-        return self.contenido
-    def getFila(self):
-        return self.fila
-    def getColumna(self):
-        return self.columna
-    def getRegion(self):
-        return self.region
-    def isOcupada(self):
-        return self.ocupada
-    def isModificable(self):
-        return self.modificable
-    
-    def setContenido(self,cont):
-        self.contenido=cont
-    def setFila(self,fila):
-        self.fila=fila
-    def setColumna(self,col):
-        self.columna=col
-    def setRegion(self,reg):
-        self.region=reg
-    def setOcupada(self,ocup):
-        self.ocupada=ocup
-    def setModificable(self,mod):
-        self.modificable=mod
-    
-        
-    
     def setGrafic(self,cont):
-        {'0':QtGui.QLabel.setPixmap(QtGui.QPixmap("Imagenes/0.jpg")),
-         '1':QtGui.QLabel.setPixmap(QtGui.QPixmap("Imagenes/1.jpg")),
-         '2':QtGui.QLabel.setPixmap(QtGui.QPixmap("Imagenes/2.jpg")),
-         '3':QtGui.QLabel.setPixmap(QtGui.QPixmap("Imagenes/3.jpg")),
-         '4':QtGui.QLabel.setPixmap(QtGui.QPixmap("Imagenes/4.jpg")),
-         '5':QtGui.QLabel.setPixmap(QtGui.QPixmap("Imagenes/5.jpg")),
-         '6':QtGui.QLabel.setPixmap(QtGui.QPixmap("Imagenes/6.jpg")),
-         '7':QtGui.QLabel.setPixmap(QtGui.QPixmap("Imagenes/7.jpg")),
-         '8':QtGui.QLabel.setPixmap(QtGui.QPixmap("Imagenes/8.jpg")),
-         '9':QtGui.QLabel.setPixmap(QtGui.QPixmap("Imagenes/9.jpg"))}[cont]
+        {'0':QtGui.QLabel.setPixmap(QtGui.QPixmap(":/Imagenes/0.jpg")),
+         '1':QtGui.QLabel.setPixmap(QtGui.QPixmap(":/Imagenes/1.jpg")),
+         '2':QtGui.QLabel.setPixmap(QtGui.QPixmap(":/Imagenes/2.jpg")),
+         '3':QtGui.QLabel.setPixmap(QtGui.QPixmap(":/Imagenes/3.jpg")),
+         '4':QtGui.QLabel.setPixmap(QtGui.QPixmap(":/Imagenes/4.jpg")),
+         '5':QtGui.QLabel.setPixmap(QtGui.QPixmap(":/Imagenes/5.jpg")),
+         '6':QtGui.QLabel.setPixmap(QtGui.QPixmap(":/Imagenes/6.jpg")),
+         '7':QtGui.QLabel.setPixmap(QtGui.QPixmap(":/Imagenes/7.jpg")),
+         '8':QtGui.QLabel.setPixmap(QtGui.QPixmap(":/Imagenes/8.jpg")),
+         '9':QtGui.QLabel.setPixmap(QtGui.QPixmap(":/Imagenes/9.jpg"))}[cont]
         
     def buscarRegion(self,f,c):
         if(f>=1 & f<=3):
@@ -77,14 +47,14 @@ class Casilla(QtGui.QLabel):
             if(c>=6 & c<=9): return 9
             
     def setGrafic2(self,cont):
-        {'0':QtGui.QLabel.setPixmap(QtGui.QPixmap("Imagenes/ds0.jpg")),
-         '1':QtGui.QLabel.setPixmap(QtGui.QPixmap("Imagenes/ds1.jpg")),
-         '2':QtGui.QLabel.setPixmap(QtGui.QPixmap("Imagenes/ds2.jpg")),
-         '3':QtGui.QLabel.setPixmap(QtGui.QPixmap("Imagenes/ds3.jpg")),
-         '4':QtGui.QLabel.setPixmap(QtGui.QPixmap("Imagenes/ds4.jpg")),
-         '5':QtGui.QLabel.setPixmap(QtGui.QPixmap("Imagenes/ds5.jpg")),
-         '6':QtGui.QLabel.setPixmap(QtGui.QPixmap("Imagenes/ds6.jpg")),
-         '7':QtGui.QLabel.setPixmap(QtGui.QPixmap("Imagenes/ds7.jpg")),
-         '8':QtGui.QLabel.setPixmap(QtGui.QPixmap("Imagenes/ds8.jpg")),
-         '9':QtGui.QLabel.setPixmap(QtGui.QPixmap("Imagenes/ds9.jpg"))}[cont]
+        {'0':QtGui.QLabel.setPixmap(QtGui.QPixmap(":/Imagenes/ds0.jpg")),
+         '1':QtGui.QLabel.setPixmap(QtGui.QPixmap(":/Imagenes/ds1.jpg")),
+         '2':QtGui.QLabel.setPixmap(QtGui.QPixmap(":/Imagenes/ds2.jpg")),
+         '3':QtGui.QLabel.setPixmap(QtGui.QPixmap(":/Imagenes/ds3.jpg")),
+         '4':QtGui.QLabel.setPixmap(QtGui.QPixmap(":/Imagenes/ds4.jpg")),
+         '5':QtGui.QLabel.setPixmap(QtGui.QPixmap(":/Imagenes/ds5.jpg")),
+         '6':QtGui.QLabel.setPixmap(QtGui.QPixmap(":/Imagenes/ds6.jpg")),
+         '7':QtGui.QLabel.setPixmap(QtGui.QPixmap(":/Imagenes/ds7.jpg")),
+         '8':QtGui.QLabel.setPixmap(QtGui.QPixmap(":/Imagenes/ds8.jpg")),
+         '9':QtGui.QLabel.setPixmap(QtGui.QPixmap(":/Imagenes/ds9.jpg"))}[cont]
     

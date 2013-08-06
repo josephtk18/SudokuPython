@@ -1,8 +1,9 @@
 '''
 Created on 04/08/2013
 
-@author: Charlie Medina
+@author: Charlie Medina & Joseph Gallardo
 '''
+import sys
 from PyQt4 import QtCore, QtGui 
 from Ui_sudoku import Ui_Sudoku
 import Tablero
@@ -32,6 +33,36 @@ class Sudoku(QtGui.QMainWindow):
         self.ocultarCasillas(nivel)
         #cargarPartida
         self.pasarMatrizAUI()
+        self.inicializarCronometro(self)
+        self.startTime()
+        
+     
+    def inicializarCronometro(self):
+        self.num=QtGui.QLCDNumber.__init__(self)
+        self.time=QtGui.QTime.__init__(self)
+        self.time.setHMS(0,0,0,0)
+        self.timer=QtGui.QTimer.__init__(self)
+        
+        self.connect(self.timer,SIGNAL("timeout()"),self.showTime())
+        
+        self.seconds=0
+        
+        self.text=self.time.toString("hh:mm:ss")
+        self.num.display(self.text)
+        self.num.setSegmentStyle(QtGui.QLCDNumber.Filled)
+        self.ventana.LayoutCronometro.addWidget(self.num)
+    
+    def startTime(self):
+        self.timer.start(1000)
+    def stopTime(self):
+        self.timer.stop()
+        
+    def showTime(self):
+        self.seconds = self.seconds + 1
+        self.newTime = self.time.addSecs(self.seconds)
+        self.text2=self.newTime.toString("hh:mm:ss")
+        self.num.display(self.text2)
+        
         
     def inicializarMatriz(self):
         for i in range(9):
@@ -47,11 +78,17 @@ class Sudoku(QtGui.QMainWindow):
                 self.matriz[i][j]=cas_tmp.pop(pos)
                 pos=pos+1
     
+    def changeSelected(self,ob):
+        if(ob is None):
+            return
+        self.casSelect=ob
+    
     def inicializarTablasUI(self,casillas):
         z=0
         cas_tmp=casillas
         for i in range(3):
             for j in range(3):
+                self.connect(cas_tmp.pop(z), SIGNAL("clicked()"),self.changeSelected(QtCore.QObject))
                 self.ventana.bloque1.addWidget(cas_tmp.pop(z),i,j)
                 z=z+1
         
@@ -59,6 +96,7 @@ class Sudoku(QtGui.QMainWindow):
         j=0
         for i in range(3):
             for j in range(3):
+                self.connect(cas_tmp.pop(z), SIGNAL("clicked()"),self.changeSelected(QtCore.QObject))
                 self.ventana.bloque2.addWidget(cas_tmp.pop(z),i,j)
                 z=z+1
         
@@ -66,6 +104,7 @@ class Sudoku(QtGui.QMainWindow):
         j=0
         for i in range(3):
             for j in range(3):
+                self.connect(cas_tmp.pop(z), SIGNAL("clicked()"),self.changeSelected(QtCore.QObject))
                 self.ventana.bloque3.addWidget(cas_tmp.pop(z),i,j)
                 z=z+1
         
@@ -73,6 +112,7 @@ class Sudoku(QtGui.QMainWindow):
         j=0
         for i in range(3):
             for j in range(3):
+                self.connect(cas_tmp.pop(z), SIGNAL("clicked()"),self.changeSelected(QtCore.QObject))
                 self.ventana.bloque4.addWidget(cas_tmp.pop(z),i,j)
                 z=z+1
         
@@ -80,6 +120,7 @@ class Sudoku(QtGui.QMainWindow):
         j=0
         for i in range(3):
             for j in range(3):
+                self.connect(cas_tmp.pop(z), SIGNAL("clicked()"),self.changeSelected(QtCore.QObject))
                 self.ventana.bloque5.addWidget(cas_tmp.pop(z),i,j)
                 z=z+1
         
@@ -87,6 +128,7 @@ class Sudoku(QtGui.QMainWindow):
         j=0
         for i in range(3):
             for j in range(3):
+                self.connect(cas_tmp.pop(z), SIGNAL("clicked()"),self.changeSelected(QtCore.QObject))
                 self.ventana.bloque6.addWidget(cas_tmp.pop(z),i,j)
                 z=z+1
         
@@ -94,6 +136,7 @@ class Sudoku(QtGui.QMainWindow):
         j=0
         for i in range(3):
             for j in range(3):
+                self.connect(cas_tmp.pop(z), SIGNAL("clicked()"),self.changeSelected(QtCore.QObject))
                 self.ventana.bloque7.addWidget(cas_tmp.pop(z),i,j)
                 z=z+1
         
@@ -101,6 +144,7 @@ class Sudoku(QtGui.QMainWindow):
         j=0
         for i in range(3):
             for j in range(3):
+                self.connect(cas_tmp.pop(z), SIGNAL("clicked()"),self.changeSelected(QtCore.QObject))
                 self.ventana.bloque8.addWidget(cas_tmp.pop(z),i,j)
                 z=z+1
         
@@ -108,6 +152,7 @@ class Sudoku(QtGui.QMainWindow):
         j=0
         for i in range(3):
             for j in range(3):
+                self.connect(cas_tmp.pop(z), SIGNAL("clicked()"),self.changeSelected(QtCore.QObject))
                 self.ventana.bloque9.addWidget(cas_tmp.pop(z),i,j)
                 z=z+1
     
@@ -225,9 +270,19 @@ class Sudoku(QtGui.QMainWindow):
                         i9=i9+1
                         j9=0 
     
+    def asignToSelect(self,ob):
+        if(ob is None): return
+        if(self.casSelect.isModificable()):
+            self.d=ob
+            self.dig=self.d.getDigito()
+            self.casSelect.setContenido(self.dig)
+            self.casSelect.setGrafic2(self.dig)
+        
+    
     def iniciarTeclado(self):
         for i in range(9):            
             self.teclado[i]=digito.Digito(i+1)
+            self.connect(self.teclado[i], SIGNAL("clicked()"),self.asignToSelect(QtCore.QObject))
             self.ventana.gridTeclado.addItem(self.teclado[i])
     
     def ocultarCasillas(self,nivel):

@@ -83,7 +83,7 @@ class Tablero(object):
                         bloque2.append(cont)
                     if(col>=7 & col<=9):
                         bloque3.append(cont)
-                    col++
+                    col=col +1
                     listo=True  
             listo=False    
         
@@ -98,11 +98,11 @@ class Tablero(object):
                 if(c.fila==fila_actual):
                     c.contenido=fila.pop(pos_bloque)
                     c.ocupada=True
-                    pos_bloque++
+                    pos_bloque=pos_bloque + 1
             if(fila_actual==3 | fila_actual==6):
                 self.cambiarOrdenBloques(bloque1,bloque2,bloque3)
             if(k==2):
                 k=0
             else:
-                k++
-            fila_actual++
+                k= k + 1
+            fila_actual=fila_actual + 1
