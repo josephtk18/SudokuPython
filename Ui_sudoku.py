@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file 'sudoku.ui'
 #
-# Created: Mon Aug  5 23:13:56 2013
-#      by: PyQt4 UI code generator 4.10.2
+# Created: Tue Aug 06 22:38:14 2013
+#      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -152,7 +152,6 @@ class Ui_Sudoku(object):
         self.actionVolver_al_men_principal.setObjectName(_fromUtf8("actionVolver_al_men_principal"))
         self.actionSalir = QtGui.QAction(Sudoku)
         self.actionSalir.setObjectName(_fromUtf8("actionSalir"))
-        self.menuMenu.addAction(self.actionVerificar_Soluci_n)
         self.menuMenu.addAction(self.actionGuardar_partida)
         self.menuCerrar.addAction(self.actionVolver_al_men_principal)
         self.menuCerrar.addAction(self.actionSalir)

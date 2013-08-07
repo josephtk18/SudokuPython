@@ -3,13 +3,16 @@ Created on 04/08/2013
 
 @author: Charlie Medina & Joseph Gallardo
 '''
-import sys
+
 from PyQt4 import QtCore, QtGui 
 from Ui_sudoku import Ui_Sudoku
+from xml.dom.minidom import Document
+import xml.etree.ElementTree as ET
 import Tablero
 import digito
 import random
-#import VentanaPrincipal
+import VentanaPrincipal
+import ctypes
 
 class Sudoku(QtGui.QMainWindow):
 
@@ -31,12 +34,16 @@ class Sudoku(QtGui.QMainWindow):
         self.pasarTableroAMatriz(self.t.casillas)
         self.inicializarTablasUI(self.t.casillas)
         self.ocultarCasillas(nivel)
-        #cargarPartida
+        if (cargar==True):
+            self.cargar()
         self.pasarMatrizAUI()
         self.inicializarCronometro(self)
         self.startTime()
         
-     
+        self.connect(self.ventana.actionVolver_al_men_principal,QtCore.SIGNAL('triggered()'), self.volver)
+        self.connect(self.ventana.actionSalir,QtCore.SIGNAL('triggered()'), self.salir)
+        self.connect(self.ventana.actionGuardar_partida,QtCore.SIGNAL('triggered()'), self.guardar)
+        
     def inicializarCronometro(self):
         self.num=QtGui.QLCDNumber.__init__(self)
         self.time=QtGui.QTime.__init__(self)
@@ -278,7 +285,6 @@ class Sudoku(QtGui.QMainWindow):
             self.casSelect.setContenido(self.dig)
             self.casSelect.setGrafic2(self.dig)
         
-    
     def iniciarTeclado(self):
         for i in range(9):            
             self.teclado[i]=digito.Digito(i+1)
@@ -417,3 +423,55 @@ class Sudoku(QtGui.QMainWindow):
     def validacion(self,fila,columna):
         if(self.validarFila(fila, columna) & self.validarColumna(fila, columna) & self.validarBloque(fila, columna)): return True
         return False
+    
+    def volver(self):
+        self.v = VentanaPrincipal.VentanaPrincipal()
+        self.v.show()
+        self.close() 
+    
+    def salir(self):
+        messageBox = ctypes.windll.user32.MessageBoxA        
+        salir = messageBox(None,'Seguro que desea salir?', 'Salir', 0x40 | 0x1)
+        if salir==1:
+            messageBox(None,"Vuelva pronto", "Salir", 0)
+            self.close()
+            
+    def guardar(self):
+        messageBox = ctypes.windll.user32.MessageBoxA        
+        guardar = messageBox(None,'Desea guardar la partida?', 'Guardar', 0x40 | 0x1)
+        if guardar==1:
+            self.pasarUIAMatriz()
+            linea = self.pasarMatrizAString()
+            crypted = linea.encode('base64','strict')
+  
+            doc = Document()
+            wml = doc.createElement("Sudoku")
+            doc.appendChild(wml)
+            maincard = doc.createElement("Juego")
+            maincard.setAttribute("save","true")
+            wml.appendChild(maincard)
+            paragraph1 = doc.createElement("Nombre")
+            maincard.appendChild(paragraph1)
+            ptext = doc.createTextNode(self.nombre)
+            paragraph1.appendChild(ptext)
+            paragraph2 = doc.createElement("Tablero")
+            maincard.appendChild(paragraph2)
+            ptext2 = doc.createTextNode(crypted)
+            paragraph2.appendChild(ptext)
+            paragraph3 = doc.createElement("Tiempo")
+            maincard.appendChild(paragraph3)
+            ##AQUI SE GUARDA EL TIEMPO QUE LLEVA EL CRONOMETRO
+            ptext3 = doc.createTextNode(self.num.text())
+            paragraph3.appendChild(ptext)
+    
+    def cargar(self):
+        tree = ET.parse('partida.XML')
+        root = tree.getroot()
+        self.nombre = root[0][0].text
+        
+        crypted = root[0][1].text
+        tablero = crypted.decode('base64','strict')
+        self.pasarStringAMatriz(tablero)
+        self.pasarMatrizAUI()
+        
+        #tiempo = root[0][2].text
