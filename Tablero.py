@@ -22,7 +22,7 @@ class Tablero(object):
     def hayRepetidoFila(self,c,cont):
         for x in self.casillas:
             if(x.fila==c.fila):
-                if(x.contenido==c.contenido):
+                if(x.contenido==cont):
                     return True
         return False
     
@@ -96,7 +96,7 @@ class Tablero(object):
                 self.pasarBloquesAFila(fila,bloque3,bloque1,bloque2)
             for c in self.casillas:
                 if(c.fila==fila_actual):
-                    c.contenido=fila.pop(pos_bloque)
+                    c.contenido=fila[pos_bloque]
                     c.ocupada=True
                     pos_bloque=pos_bloque + 1
             if(fila_actual==3 | fila_actual==6):

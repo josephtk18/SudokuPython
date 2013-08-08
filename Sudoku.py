@@ -1,3 +1,4 @@
+# coding=utf-8
 '''
 Created on 04/08/2013
 
@@ -23,6 +24,9 @@ class Sudoku(QtGui.QMainWindow):
         self.setWindowTitle("Sudoku")
         self.setFixedHeight(self.height())
         self.setFixedWidth(self.width())
+        self.matriz = [ [0 for i in range(9)] for j in range(9) ]
+        self.teclado=[]
+        self.casSelect = Tablero.casilla.Casilla(0,0,0,0)
         
         if(cargar==False):
             self.nombre = QtGui.QInputDialog.getText(self, 'Juego Nuevo', 'Ingrese el nombre del jugador:')
@@ -37,7 +41,8 @@ class Sudoku(QtGui.QMainWindow):
         if (cargar==True):
             self.cargar()
         self.pasarMatrizAUI()
-        self.inicializarCronometro(self)
+        self.seconds=0
+        self.inicializarCronometro()
         self.startTime()
         
         self.connect(self.ventana.actionVolver_al_men_principal,QtCore.SIGNAL('triggered()'), self.volver)
@@ -45,12 +50,12 @@ class Sudoku(QtGui.QMainWindow):
         self.connect(self.ventana.actionGuardar_partida,QtCore.SIGNAL('triggered()'), self.guardar)
         
     def inicializarCronometro(self):
-        self.num=QtGui.QLCDNumber.__init__(self)
-        self.time=QtGui.QTime.__init__(self)
+        self.num=QtGui.QLCDNumber()
+        self.time=QtCore.QTime()
         self.time.setHMS(0,0,0,0)
-        self.timer=QtGui.QTimer.__init__(self)
+        self.timer=QtCore.QTimer()
         
-        self.connect(self.timer,SIGNAL("timeout()"),self.showTime())
+        self.connect(self.timer,QtCore.SIGNAL("timeout"),self.showTime)
         
         self.seconds=0
         
@@ -78,11 +83,10 @@ class Sudoku(QtGui.QMainWindow):
     
     def pasarTableroAMatriz(self,casillas):
         pos=0
-        cas_tmp=casillas
-        
+
         for i in range(9):
             for j in range(9):
-                self.matriz[i][j]=cas_tmp.pop(pos)
+                self.matriz[i][j]=casillas[pos].contenido
                 pos=pos+1
     
     def changeSelected(self,ob):
@@ -92,75 +96,74 @@ class Sudoku(QtGui.QMainWindow):
     
     def inicializarTablasUI(self,casillas):
         z=0
-        cas_tmp=casillas
         for i in range(3):
             for j in range(3):
-                self.connect(cas_tmp.pop(z), SIGNAL("clicked()"),self.changeSelected(QtCore.QObject))
-                self.ventana.bloque1.addWidget(cas_tmp.pop(z),i,j)
+                self.connect(casillas[z], QtCore.SIGNAL("clickedChange"),self.changeSelected)
+                self.ventana.bloque1.addWidget(casillas[z],i,j)
                 z=z+1
         
         i=0
         j=0
         for i in range(3):
             for j in range(3):
-                self.connect(cas_tmp.pop(z), SIGNAL("clicked()"),self.changeSelected(QtCore.QObject))
-                self.ventana.bloque2.addWidget(cas_tmp.pop(z),i,j)
+                self.connect(casillas[z], QtCore.SIGNAL("clickedChange"),self.changeSelected)
+                self.ventana.bloque2.addWidget(casillas[z],i,j)
                 z=z+1
         
         i=0
         j=0
         for i in range(3):
             for j in range(3):
-                self.connect(cas_tmp.pop(z), SIGNAL("clicked()"),self.changeSelected(QtCore.QObject))
-                self.ventana.bloque3.addWidget(cas_tmp.pop(z),i,j)
+                self.connect(casillas[z], QtCore.SIGNAL("clickedChange"),self.changeSelected)
+                self.ventana.bloque3.addWidget(casillas[z],i,j)
                 z=z+1
         
         i=0
         j=0
         for i in range(3):
             for j in range(3):
-                self.connect(cas_tmp.pop(z), SIGNAL("clicked()"),self.changeSelected(QtCore.QObject))
-                self.ventana.bloque4.addWidget(cas_tmp.pop(z),i,j)
+                self.connect(casillas[z], QtCore.SIGNAL("clickedChange"),self.changeSelected)
+                self.ventana.bloque4.addWidget(casillas[z],i,j)
                 z=z+1
         
         i=0
         j=0
         for i in range(3):
             for j in range(3):
-                self.connect(cas_tmp.pop(z), SIGNAL("clicked()"),self.changeSelected(QtCore.QObject))
-                self.ventana.bloque5.addWidget(cas_tmp.pop(z),i,j)
+                self.connect(casillas[z], QtCore.SIGNAL("clickedChange"),self.changeSelected)
+                self.ventana.bloque5.addWidget(casillas[z],i,j)
                 z=z+1
         
         i=0
         j=0
         for i in range(3):
             for j in range(3):
-                self.connect(cas_tmp.pop(z), SIGNAL("clicked()"),self.changeSelected(QtCore.QObject))
-                self.ventana.bloque6.addWidget(cas_tmp.pop(z),i,j)
+                self.connect(casillas[z], QtCore.SIGNAL("clickedChange"),self.changeSelected)
+                self.ventana.bloque6.addWidget(casillas[z],i,j)
                 z=z+1
         
         i=0
         j=0
         for i in range(3):
             for j in range(3):
-                self.connect(cas_tmp.pop(z), SIGNAL("clicked()"),self.changeSelected(QtCore.QObject))
-                self.ventana.bloque7.addWidget(cas_tmp.pop(z),i,j)
+                self.connect(casillas[z], QtCore.SIGNAL("clickedChange"),self.changeSelected)
+                self.ventana.bloque7.addWidget(casillas[z],i,j)
                 z=z+1
         
         i=0
         j=0
         for i in range(3):
             for j in range(3):
-                self.connect(cas_tmp.pop(z), SIGNAL("clicked()"),self.changeSelected(QtCore.QObject))
-                self.ventana.bloque8.addWidget(cas_tmp.pop(z),i,j)
+                self.connect(casillas[z], QtCore.SIGNAL("clickedChange"),self.changeSelected)
+                self.ventana.bloque8.addWidget(casillas[z],i,j)
                 z=z+1
         
         i=0
         j=0
         for i in range(3):
             for j in range(3):
-                self.connect(cas_tmp.pop(z), SIGNAL("clicked()"),self.changeSelected(QtCore.QObject))
-                self.ventana.bloque9.addWidget(cas_tmp.pop(z),i,j)
+                self.connect(casillas[z], QtCore.SIGNAL("clickedChange"),self.changeSelected)
+                self.ventana.bloque9.addWidget(casillas[z],i,j)
                 z=z+1
     
     def pasarMatrizAUI(self):
@@ -187,9 +190,10 @@ class Sudoku(QtGui.QMainWindow):
             for j in range(9):
                 region=cas.buscarRegion(i+1,j+1)
                 if(region==1):
-                    cas=self.ventana.bloque1.itemAtPosition(i1,j1)
-                    cas.contenido=self.matriz[i][j]
-                    cas.setGrafic(self.matriz[i][j])
+                    cas=self.ventana.bloque1.itemAtPosition(i1,j1).widget()
+                    n = self.matriz[i][j]
+                    cas.contenido=n
+                    cas.setGrafic(n)
                     if(self.matriz[i][j]==0):
                         cas.modificable=True
                     j1=j1+1
@@ -197,9 +201,10 @@ class Sudoku(QtGui.QMainWindow):
                         i1=i1+1
                         j1=0
                 if(region==2):
-                    cas=self.ventana.bloque2.itemAtPosition(i2,j2)
-                    cas.contenido=self.matriz[i][j]
-                    cas.setGrafic(self.matriz[i][j])
+                    cas=self.ventana.bloque2.itemAtPosition(i2,j2).widget()
+                    n = self.matriz[i][j]
+                    cas.contenido=n
+                    cas.setGrafic(n)
                     if(self.matriz[i][j]==0):
                         cas.modificable=True
                     j2=j2+1
@@ -207,9 +212,10 @@ class Sudoku(QtGui.QMainWindow):
                         i2=i2+1
                         j2=0
                 if(region==3):
-                    cas=self.ventana.bloque3.itemAtPosition(i3,j3)
-                    cas.contenido=self.matriz[i][j]
-                    cas.setGrafic(self.matriz[i][j])
+                    cas=self.ventana.bloque3.itemAtPosition(i3,j3).widget()
+                    n = self.matriz[i][j]
+                    cas.contenido=n
+                    cas.setGrafic(n)
                     if(self.matriz[i][j]==0):
                         cas.modificable=True
                     j3=j3+1
@@ -217,7 +223,7 @@ class Sudoku(QtGui.QMainWindow):
                         i3=i3+1
                         j3=0
                 if(region==4):
-                    cas=self.ventana.bloque4.itemAtPosition(i4,j4)
+                    cas=self.ventana.bloque4.itemAtPosition(i4,j4).widget()
                     cas.contenido=self.matriz[i][j]
                     cas.setGrafic(self.matriz[i][j])
                     if(self.matriz[i][j]==0):
@@ -227,7 +233,7 @@ class Sudoku(QtGui.QMainWindow):
                         i4=i4+1
                         j4=0
                 if(region==5):
-                    cas=self.ventana.bloque5.itemAtPosition(i5,j5)
+                    cas=self.ventana.bloque5.itemAtPosition(i5,j5).widget()
                     cas.contenido=self.matriz[i][j]
                     cas.setGrafic(self.matriz[i][j])
                     if(self.matriz[i][j]==0):
@@ -237,7 +243,7 @@ class Sudoku(QtGui.QMainWindow):
                         i5=i5+1
                         j5=0
                 if(region==6):
-                    cas=self.ventana.bloque6.itemAtPosition(i6,j6)
+                    cas=self.ventana.bloque6.itemAtPosition(i6,j6).widget()
                     cas.contenido=self.matriz[i][j]
                     cas.setGrafic(self.matriz[i][j])
                     if(self.matriz[i][j]==0):
@@ -247,7 +253,7 @@ class Sudoku(QtGui.QMainWindow):
                         i6=i6+1
                         j6=0
                 if(region==7):
-                    cas=self.ventana.bloque7.itemAtPosition(i7,j7)
+                    cas=self.ventana.bloque7.itemAtPosition(i7,j7).widget()
                     cas.contenido=self.matriz[i][j]
                     cas.setGrafic(self.matriz[i][j])
                     if(self.matriz[i][j]==0):
@@ -257,7 +263,7 @@ class Sudoku(QtGui.QMainWindow):
                         i7=i7+1
                         j7=0
                 if(region==8):
-                    cas=self.ventana.bloque8.itemAtPosition(i8,j8)
+                    cas=self.ventana.bloque8.itemAtPosition(i8,j8).widget()
                     cas.contenido=self.matriz[i][j]
                     cas.setGrafic(self.matriz[i][j])
                     if(self.matriz[i][j]==0):
@@ -267,7 +273,7 @@ class Sudoku(QtGui.QMainWindow):
                         i8=i8+1
                         j8=0
                 if(region==9):
-                    cas=self.ventana.bloque9.itemAtPosition(i9,j9)
+                    cas=self.ventana.bloque9.itemAtPosition(i9,j9).widget()
                     cas.contenido=self.matriz[i][j]
                     cas.setGrafic(self.matriz[i][j])
                     if(self.matriz[i][j]==0):
@@ -277,34 +283,113 @@ class Sudoku(QtGui.QMainWindow):
                         i9=i9+1
                         j9=0 
     
+    def tableroLleno(self):
+        for i in range(3):
+            for j in range(3):
+                cas= self.ventana.bloque1.itemAtPosition(i,j).widget()
+                if(cas.contenido==0):
+                    return False
+        i=0
+        j=0
+        for i in range(3):
+            for j in range(3):
+                cas= self.ventana.bloque2.itemAtPosition(i,j).widget()
+                if(cas.contenido==0):
+                    return False            
+        i=0
+        j=0
+        for i in range(3):
+            for j in range(3):
+                cas= self.ventana.bloque3.itemAtPosition(i,j).widget()
+                if(cas.contenido==0):
+                    return False            
+        i=0
+        j=0
+        for i in range(3):
+            for j in range(3):
+                cas= self.ventana.bloque4.itemAtPosition(i,j).widget()
+                if(cas.contenido==0):
+                    return False            
+        i=0
+        j=0
+        for i in range(3):
+            for j in range(3):
+                cas= self.ventana.bloque5.itemAtPosition(i,j).widget()
+                if(cas.contenido==0):
+                    return False            
+        i=0
+        j=0
+        for i in range(3):
+            for j in range(3):
+                cas= self.ventana.bloque6.itemAtPosition(i,j).widget()
+                if(cas.contenido==0):
+                    return False            
+        i=0
+        j=0
+        for i in range(3):
+            for j in range(3):
+                cas= self.ventana.bloque7.itemAtPosition(i,j).widget()
+                if(cas.contenido==0):
+                    return False            
+        i=0
+        j=0
+        for i in range(3):
+            for j in range(3):
+                cas= self.ventana.bloque8.itemAtPosition(i,j).widget()
+                if(cas.contenido==0):
+                    return False            
+        i=0
+        j=0
+        for i in range(3):
+            for j in range(3):
+                cas= self.ventana.bloque9.itemAtPosition(i,j).widget()
+                if(cas.contenido==0):
+                    return False
+        return True
+    
     def asignToSelect(self,ob):
+        valido=True
         if(ob is None): return
-        if(self.casSelect.isModificable()):
+        if(self.casSelect.modificable==True):
             self.d=ob
             self.dig=self.d.getDigito()
-            self.casSelect.setContenido(self.dig)
+            self.casSelect.contenido=self.dig
             self.casSelect.setGrafic2(self.dig)
+            
+        if(self.tableroLleno()==True):
+            self.pasarUIAMatriz() 
+            for i in range(3):
+                for j in range(3):
+                    if(self.validacion(i,j)==False): valido=False
+            messageBox = ctypes.windll.user32.MessageBoxW             
+            if(valido==False): 
+                messageBox(None,"El tablero esta mal llenado", "Error", 0)
+            else:
+                messageBox(None,"El tablero esta correcto!", "Felicidades", 0)
+                self.v = VentanaPrincipal.VentanaPrincipal()
+                self.v.show()
+                self.close() 
         
     def iniciarTeclado(self):
+        i=0
         for i in range(9):            
-            self.teclado[i]=digito.Digito(i+1)
-            self.connect(self.teclado[i], SIGNAL("clicked()"),self.asignToSelect(QtCore.QObject))
-            self.ventana.gridTeclado.addItem(self.teclado[i])
+            self.teclado.append(digito.Digito(i+1))
+            self.connect(self.teclado[i], QtCore.SIGNAL("changeToSelect"), self.asignToSelect)
+            self.ventana.gridTeclado.addWidget(self.teclado[i])
     
     def ocultarCasillas(self,nivel):
         if(nivel==1): tmp=3
         if(nivel==2): tmp=5
         if(nivel==3): tmp=6
         cont=tmp
-        bloque=1
-        c = Tablero.casilla.Casilla(0,0,0,0) #instancia de casilla, para llamar metodo buscarRegion
+        c = Tablero.casilla.Casilla(0,0,0,0)
         
-        for bloque in range(10):
+        for bloque in range(9):
             while cont>0:
                 for i in range(9):
                     for j in range(9):
                         if(cont>0):
-                            if(c.buscarRegion(i+1,j+1)==bloque):
+                            if(c.buscarRegion(i+1,j+1)==bloque+1):
                                 if(random.randint(0,1)==1):
                                     self.matriz[i][j]=0
                                     cont = cont-1
@@ -313,7 +398,7 @@ class Sudoku(QtGui.QMainWindow):
     def pasarUIAMatriz(self):
         for i in range(3):
             for j in range(3):
-                cas = self.ventana.bloque1.itemAtPosition(i,j)
+                cas = self.ventana.bloque1.itemAtPosition(i,j).widget()
                 cont = cas.contenido
                 self.matriz[i][j]=cont
         
@@ -321,7 +406,7 @@ class Sudoku(QtGui.QMainWindow):
         j=0
         for i in range(3):
             for j in range(3):
-                cas = self.ventana.bloque2.itemAtPosition(i,j)
+                cas = self.ventana.bloque2.itemAtPosition(i,j).widget()
                 cont = cas.contenido
                 self.matriz[i][j+3]=cont
         
@@ -329,7 +414,7 @@ class Sudoku(QtGui.QMainWindow):
         j=0
         for i in range(3):
             for j in range(3):
-                cas = self.ventana.bloque3.itemAtPosition(i,j)
+                cas = self.ventana.bloque3.itemAtPosition(i,j).widget()
                 cont = cas.contenido
                 self.matriz[i][j+6]=cont
         
@@ -337,7 +422,7 @@ class Sudoku(QtGui.QMainWindow):
         j=0
         for i in range(3):
             for j in range(3):
-                cas = self.ventana.bloque4.itemAtPosition(i,j)
+                cas = self.ventana.bloque4.itemAtPosition(i,j).widget()
                 cont = cas.contenido
                 self.matriz[i+3][j]=cont
         
@@ -345,7 +430,7 @@ class Sudoku(QtGui.QMainWindow):
         j=0
         for i in range(3):
             for j in range(3):
-                cas = self.ventana.bloque5.itemAtPosition(i,j)
+                cas = self.ventana.bloque5.itemAtPosition(i,j).widget()
                 cont = cas.contenido
                 self.matriz[i+3][j+3]=cont
         
@@ -353,7 +438,7 @@ class Sudoku(QtGui.QMainWindow):
         j=0
         for i in range(3):
             for j in range(3):
-                cas = self.ventana.bloque6.itemAtPosition(i,j)
+                cas = self.ventana.bloque6.itemAtPosition(i,j).widget()
                 cont = cas.contenido
                 self.matriz[i+3][j+6]=cont
         
@@ -361,7 +446,7 @@ class Sudoku(QtGui.QMainWindow):
         j=0
         for i in range(3):
             for j in range(3):
-                cas = self.ventana.bloque7.itemAtPosition(i,j)
+                cas = self.ventana.bloque7.itemAtPosition(i,j).widget()
                 cont = cas.contenido
                 self.matriz[i+6][j]=cont
         
@@ -369,7 +454,7 @@ class Sudoku(QtGui.QMainWindow):
         j=0
         for i in range(3):
             for j in range(3):
-                cas = self.ventana.bloque8.itemAtPosition(i,j)
+                cas = self.ventana.bloque8.itemAtPosition(i,j).widget()
                 cont = cas.contenido
                 self.matriz[i+6][j+3]=cont
         
@@ -377,7 +462,7 @@ class Sudoku(QtGui.QMainWindow):
         j=0
         for i in range(3):
             for j in range(3):
-                cas = self.ventana.bloque9.itemAtPosition(i,j)
+                cas = self.ventana.bloque9.itemAtPosition(i,j).widget()
                 cont = cas.contenido
                 self.matriz[i+6][j+6]=cont
     
@@ -409,13 +494,15 @@ class Sudoku(QtGui.QMainWindow):
         return True
     
     def validarBloque(self,fila,columna):
-        ancho=fila/3
-        largo=columna/3
+        ancho= int(fila/3) 
+        largo= int(columna/3)
         i=ancho*3
         j=largo*3
+        rangoi = (ancho*3)+3
+        rangoj = (largo*3)+3
         
-        for i in range(ancho*3+3):
-            for j in range(largo*3+3):
+        for i in range(rangoi):
+            for j in range(rangoj):
                 if((i==fila & j==columna)==False):
                     if(self.matriz[fila][columna]==self.matriz[i][j]): return False
         return True
@@ -457,12 +544,12 @@ class Sudoku(QtGui.QMainWindow):
             paragraph2 = doc.createElement("Tablero")
             maincard.appendChild(paragraph2)
             ptext2 = doc.createTextNode(crypted)
-            paragraph2.appendChild(ptext)
+            paragraph2.appendChild(ptext2)
             paragraph3 = doc.createElement("Tiempo")
             maincard.appendChild(paragraph3)
             ##AQUI SE GUARDA EL TIEMPO QUE LLEVA EL CRONOMETRO
-            ptext3 = doc.createTextNode(self.num.text())
-            paragraph3.appendChild(ptext)
+            ptext3 = doc.createTextNode(self.seconds)
+            paragraph3.appendChild(ptext3)
     
     def cargar(self):
         tree = ET.parse('partida.XML')
@@ -474,4 +561,9 @@ class Sudoku(QtGui.QMainWindow):
         self.pasarStringAMatriz(tablero)
         self.pasarMatrizAUI()
         
-        #tiempo = root[0][2].text
+        tiempo = root[0][2].text
+        self.seconds = tiempo.toInt()
+        self.newTime = self.time.addSecs(self.seconds)
+        self.text2=self.newTime.toString("hh:mm:ss")
+        self.num.display(self.text2)
+        
