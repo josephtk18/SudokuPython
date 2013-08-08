@@ -41,10 +41,10 @@ class Sudoku(QtGui.QMainWindow):
         self.pasarTableroAMatriz(self.t.casillas)
         self.inicializarTablasUI(self.t.casillas)
         self.ocultarCasillas(nivel)
+        self.inicializarCronometro()
         if (cargar==True):
             self.cargar()
         self.pasarMatrizAUI()
-        self.inicializarCronometro()
         self.startTime()
         
         self.connect(self.ventana.actionVolver_al_men_principal,QtCore.SIGNAL('triggered()'), self.volver)
