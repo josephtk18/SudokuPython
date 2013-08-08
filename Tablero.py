@@ -14,8 +14,9 @@ class Tablero(object):
         
     def inicializarCasillas(self):
         for i in range(9):
-            for j in range(9):
-                region = casilla.Casilla.buscarRegion(self, i+1, j+1)
+            for j in range(9):                
+                p = casilla.Casilla(0,0,0,0)
+                region = p.buscarRegion(i+1, j+1)
                 c = casilla.Casilla(0,i+1,j+1,region)
                 self.casillas.append(c)
     

@@ -10,5 +10,5 @@ from VentanaPrincipal import VentanaPrincipal
 if __name__ == '__main__':
     app=QtGui.QApplication(sys.argv)
     vPrincipal = VentanaPrincipal()
-    vPrincipal.show()    
+    vPrincipal.show()
     sys.exit(app.exec_())

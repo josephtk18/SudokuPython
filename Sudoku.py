@@ -24,12 +24,15 @@ class Sudoku(QtGui.QMainWindow):
         self.setWindowTitle("Sudoku")
         self.setFixedHeight(self.height())
         self.setFixedWidth(self.width())
+        self.nombre=""
         self.matriz = [ [0 for i in range(9)] for j in range(9) ]
         self.teclado=[]
         self.casSelect = Tablero.casilla.Casilla(0,0,0,0)
-        
+        self.seconds=0
+        self.num=QtGui.QLCDNumber()
+        self.time=QtCore.QTime()
         if(cargar==False):
-            self.nombre = QtGui.QInputDialog.getText(self, 'Juego Nuevo', 'Ingrese el nombre del jugador:')
+            self.nombre,ok = QtGui.QInputDialog.getText(self, 'Juego Nuevo', 'Ingrese el nombre del jugador:')
         
         self.t=Tablero.Tablero()
         self.inicializarMatriz()
@@ -41,7 +44,6 @@ class Sudoku(QtGui.QMainWindow):
         if (cargar==True):
             self.cargar()
         self.pasarMatrizAUI()
-        self.seconds=0
         self.inicializarCronometro()
         self.startTime()
         
@@ -50,8 +52,6 @@ class Sudoku(QtGui.QMainWindow):
         self.connect(self.ventana.actionGuardar_partida,QtCore.SIGNAL('triggered()'), self.guardar)
         
     def inicializarCronometro(self):
-        self.num=QtGui.QLCDNumber()
-        self.time=QtCore.QTime()
         self.time.setHMS(0,0,0,0)
         self.timer=QtCore.QTimer()
         
@@ -378,6 +378,7 @@ class Sudoku(QtGui.QMainWindow):
             self.ventana.gridTeclado.addWidget(self.teclado[i])
     
     def ocultarCasillas(self,nivel):
+        tmp = 0
         if(nivel==1): tmp=3
         if(nivel==2): tmp=5
         if(nivel==3): tmp=6
@@ -470,7 +471,7 @@ class Sudoku(QtGui.QMainWindow):
         linea=""
         for i in range(9):
             for j in range(9):                
-                linea+self.matriz[i][j]
+                linea=linea+str(self.matriz[i][j])
                 if(j==8): linea+"\n"
         return linea
     
@@ -479,7 +480,7 @@ class Sudoku(QtGui.QMainWindow):
             for j in range(9):
                 self.matriz[i][j]=int(linea[0])
                 linea = linea[1:]
-                if(j==8): linea = linea[1:]
+                #if(j==8): linea = linea[1:]
     
     def validarFila(self,fila,columna):
         for i in range(9):
@@ -530,29 +531,25 @@ class Sudoku(QtGui.QMainWindow):
             self.pasarUIAMatriz()
             linea = self.pasarMatrizAString()
             crypted = linea.encode('base64','strict')
-  
-            doc = Document()
-            wml = doc.createElement("Sudoku")
-            doc.appendChild(wml)
-            maincard = doc.createElement("Juego")
-            maincard.setAttribute("save","true")
-            wml.appendChild(maincard)
-            paragraph1 = doc.createElement("Nombre")
-            maincard.appendChild(paragraph1)
-            ptext = doc.createTextNode(self.nombre)
-            paragraph1.appendChild(ptext)
-            paragraph2 = doc.createElement("Tablero")
-            maincard.appendChild(paragraph2)
-            ptext2 = doc.createTextNode(crypted)
-            paragraph2.appendChild(ptext2)
-            paragraph3 = doc.createElement("Tiempo")
-            maincard.appendChild(paragraph3)
-            ##AQUI SE GUARDA EL TIEMPO QUE LLEVA EL CRONOMETRO
-            ptext3 = doc.createTextNode(self.seconds)
-            paragraph3.appendChild(ptext3)
+            
+            root = ET.Element("Sudoku")
+            doc = ET.SubElement(root,"partida")
+            field1 = ET.SubElement(doc,"Nombre")
+            field1.text = str(self.nombre)
+            print str(self.nombre)
+            field2 = ET.SubElement(doc,"Tablero")
+            field2.text = crypted
+            print crypted
+            field3 = ET.SubElement(doc,"Tiempo")
+            field3.text = str(self.seconds)
+            print str(self.seconds)
+            tree = ET.ElementTree(root)
+            tree.write("partida.xml")
+            messageBox(None,"La partida se ha guardado exitosamente!", "Guardar", 0)
+            
     
     def cargar(self):
-        tree = ET.parse('partida.XML')
+        tree = ET.parse('partida.xml')
         root = tree.getroot()
         self.nombre = root[0][0].text
         
@@ -562,7 +559,7 @@ class Sudoku(QtGui.QMainWindow):
         self.pasarMatrizAUI()
         
         tiempo = root[0][2].text
-        self.seconds = tiempo.toInt()
+        self.seconds = int(tiempo)
         self.newTime = self.time.addSecs(self.seconds)
         self.text2=self.newTime.toString("hh:mm:ss")
         self.num.display(self.text2)

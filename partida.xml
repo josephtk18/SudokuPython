@@ -1,8 +1,3 @@
-<?xml version="1.0" ?>
-<Sudoku>
- <Juego save="true">
-  <Nombre>
-   Charlie
-  </Nombre>
- </Juego>
-</Sudoku>
+<Sudoku><partida><Nombre>cc</Nombre><Tablero>MTIzMDcwMDAyMDQ2MDQwMDA2MDc4MDc4MDA4MDAwMzA1MDAwMDY5MDYwNDA5NzIwMDIwNzI4MDA1
+MDA1MDMwMDk2MjAwMjkwMDg0NzA0MDgw
+</Tablero><Tiempo>0</Tiempo></partida></Sudoku>
