@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
+<title>Sudoku: Fichero Fuente C:/Users/Usuario/Documents/GitHub/ProyectoSudoku/casilla.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Sudoku
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.4 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&#160;relacionadas</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">C:/Users/Usuario/Documents/GitHub/ProyectoSudoku/casilla.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="casilla_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef CASILLA_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CASILLA_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QLabel&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QPixmap&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="code" href="class_casilla.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_casilla.html">Casilla</a> : <span class="keyword">public</span> QLabel</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="class_casilla.html#a3ce9aac3825a3bc59d574572777826e1">Casilla</a>(<span class="keywordtype">int</span> cont, <span class="keywordtype">int</span> f, <span class="keywordtype">int</span> c, <span class="keywordtype">int</span> reg);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_casilla.html#add0135ca5142e6239c906bd0d841e940">getContenido</a>();</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_casilla.html#a615db903b0f88706b791249ba01a9c5e">getFila</a>();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_casilla.html#a9a3e3e83c8ed143f80a91e6e4ebb53a4">getColumna</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_casilla.html#ae3b07d4ccf1e9b713b1f7b1cc921d2f7">getRegion</a>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_casilla.html#a50ec416f158a95dbbc5c04ecb3bb55cc">isOcupada</a>();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_casilla.html#a5443768c1455bb02d85bd6d9c17420e1">isModificable</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_casilla.html#a3cb846c5a157a8c8ac2db061fe2daa8c">setContenido</a>(<span class="keywordtype">int</span> cont);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_casilla.html#aec6e065c7466302e43f684d8bfcbb161">setFila</a>(<span class="keywordtype">int</span> f);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_casilla.html#aa8023e9c5e88bc0628c58433cea6dfc6">setColumna</a>(<span class="keywordtype">int</span> c);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_casilla.html#acf62a2e44258ee9845a6a5cf2e805b74">setRegion</a>(<span class="keywordtype">int</span> r);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_casilla.html#aca80f6cba573688d10c1a78f13e0d377">setOcupada</a>(<span class="keywordtype">bool</span> d);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_casilla.html#ae482475002ad952e0284771d6c5a6879">setModificable</a>(<span class="keywordtype">bool</span> m);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_casilla.html#ad1f3c8972a3490213b6d7c055597ab95" title="Ubica la región específica donde se ubica la casilla. ">buscarRegion</a>(<span class="keywordtype">int</span> f, <span class="keywordtype">int</span> c);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_casilla.html#ae77388cc9434142b2a71f3f7b31fad06" title="Funcion que asigna la imagen del numero que está en el tablero al QLabel. ">setGrafic</a>(<span class="keywordtype">int</span> i);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_casilla.html#a3fa8dd35706d992df3f847fa9ef85c8f" title="Funcion que asigna la imagen del número que está en el teclado al QLabel. ">setGrafic2</a>(<span class="keywordtype">int</span> i);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_casilla.html#a70a5f5d3a7fedf57d02c0d56a07d5422">mousePressEvent</a>(QMouseEvent *ev);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;signals:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_casilla.html#acd84dd28ba04eb801f1368d627adbd12">clickedChange</a>(QObject *obj);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">int</span> contenido, fila, columna, region;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">bool</span> ocupada,modificable;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif // CASILLA_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Lunes, 8 de Julio de 2013 01:24:33 para Sudoku por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.4
+</small></address>
+</body>
+</html>

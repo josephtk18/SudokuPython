@@ -43,7 +43,7 @@ class VentanaPrincipal(QtGui.QMainWindow):
         self.v.show()
             
     def salir(self):
-        messageBox = ctypes.windll.user32.MessageBoxW     
+        messageBox = ctypes.windll.user32.MessageBoxA     
         salir = messageBox(None,'Seguro que desea salir?', 'Salir', 0x40 | 0x1)
         if salir==1:
             messageBox(None,"Vuelva pronto", "Salir", 0)

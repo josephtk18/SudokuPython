@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
+<title>Sudoku: Fichero Fuente C:/Users/Usuario/Documents/GitHub/ProyectoSudoku/tablero.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Sudoku
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.4 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&#160;relacionadas</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">C:/Users/Usuario/Documents/GitHub/ProyectoSudoku/tablero.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="tablero_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef TABLERO_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TABLERO_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="casilla_8h.html">casilla.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QTime&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QGlobal.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="class_tablero.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_tablero.html">Tablero</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="class_tablero.html#ab4912f28f1db392e1dd44ddc98bd4f59">Tablero</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="class_casilla.html">Casilla</a> **<a class="code" href="class_tablero.html#a4afb1f47fd3d8c74890a0a70bf65f467">getCasillas</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_tablero.html#ad78cc8ce5ebe7d45c5a09c9a45c20b19" title="Genera las casillas del tablero lógico. ">inicializarCasillas</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_tablero.html#a3f7aae0818d6976fbce1e2361009aa8d" title="Genera el tablero lógico. ">generarTablero</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_tablero.html#ae59075a16637493f50a7f589eead974f" title="Verifica si hay un número repetido en la fila. ">hayRepetidoFila</a>(<a class="code" href="class_casilla.html">Casilla</a>* c, <span class="keywordtype">int</span> cont);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_tablero.html#aae40ad704122ec5638f2ea3a7d46f37d" title="Ubica la posicion del bloque y lo pasa a la fila. ">pasarBloquesAFila</a>(<span class="keywordtype">int</span> F[], <span class="keywordtype">int</span> B1[], <span class="keywordtype">int</span> B2[], <span class="keywordtype">int</span> B3[]);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_tablero.html#ab225abebb4923eab2e299a45e8e95d31" title="Cambia de forma aleatorioa los 9 bloques del tablero. ">cambiarOrdenBloques</a>(<span class="keywordtype">int</span> B1[], <span class="keywordtype">int</span> B2[], <span class="keywordtype">int</span> B3[]);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_tablero.html#ae0f3eeb6b6487599025d6a0d10103dbd">randInt</a>(<span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max);</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="class_tablero.html#a4db92ae564333aca37f5777e31b5db69">   47</a></span>&#160;    <a class="code" href="class_casilla.html">Casilla</a> *<a class="code" href="class_tablero.html#a4db92ae564333aca37f5777e31b5db69">casillas</a>[81];</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif // TABLERO_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Lunes, 8 de Julio de 2013 01:24:33 para Sudoku por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.4
+</small></address>
+</body>
+</html>

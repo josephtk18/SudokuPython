@@ -1,0 +1,15 @@
+digraph "Sudoku::pasarMatrizAUI"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Sudoku::pasarMatrizAUI",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Casilla::buscarRegion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_casilla.html#ad1f3c8972a3490213b6d7c055597ab95",tooltip="Ubica la región específica donde se ubica la casilla. "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Casilla::setContenido",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_casilla.html#a3cb846c5a157a8c8ac2db061fe2daa8c"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Casilla::setGrafic",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_casilla.html#ae77388cc9434142b2a71f3f7b31fad06",tooltip="Funcion que asigna la imagen del numero que está en el tablero al QLabel. "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Casilla::setModificable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_casilla.html#ae482475002ad952e0284771d6c5a6879"];
+}

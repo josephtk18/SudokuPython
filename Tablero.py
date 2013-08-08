@@ -28,16 +28,15 @@ class Tablero(object):
         return False
     
     def pasarBloquesAFila(self,F,B1,B2,B3):
-        B1tmp=B1
-        B2tmp=B2
-        B3tmp=B3
-        for i in range(3):
-            F.append(B1tmp.pop())
-        for j in range(3):
-            F.append(B2tmp.pop())
-        for k in range(3):
-            F.append(B3tmp.pop())
-    
+        pos=0
+        bloque=0
+        for bloque in range(3):
+            for i in range(3):
+                if(pos>=0 and pos<=2): F.append(B1[i])
+                if(pos>=3 and pos<=5): F.append(B2[i])
+                if(pos>=6 and pos<=8): F.append(B3[i])
+                pos = pos+1
+                
     def cambiarOrdenBloques(self,B1,B2,B3):
         i=B1.pop(0) 
         j=B1.pop(0)
@@ -78,11 +77,11 @@ class Tablero(object):
                 if(self.hayRepetidoFila(c, cont)==False):
                     c.contenido=cont
                     c.ocupada=True
-                    if(col>=1 & col<=3):
+                    if(col>=1 and col<=3):
                         bloque1.append(cont)
-                    if(col>=4 & col<=6):
+                    if(col>=4 and col<=6):
                         bloque2.append(cont)
-                    if(col>=7 & col<=9):
+                    if(col>=7 and col<=9):
                         bloque3.append(cont)
                     col=col +1
                     listo=True  
@@ -100,7 +99,7 @@ class Tablero(object):
                     c.contenido=fila[pos_bloque]
                     c.ocupada=True
                     pos_bloque=pos_bloque + 1
-            if(fila_actual==3 | fila_actual==6):
+            if(fila_actual==3 or fila_actual==6):
                 self.cambiarOrdenBloques(bloque1,bloque2,bloque3)
             if(k==2):
                 k=0

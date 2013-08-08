@@ -1,0 +1,13 @@
+digraph "Casilla::getContenido"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Casilla::getContenido",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Sudoku::pasarTableroAMatriz",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sudoku.html#acaf701ef21d5f0a7278e499adf7b0cce",tooltip="Función que pasa los números de cada casilla a la respectiva posicion de la matriz. "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Sudoku::Sudoku",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sudoku.html#add26172d727a99b29e4cc1c99d17ead4"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Sudoku::pasarUIAMatriz",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sudoku.html#a677058aeea464de01058a2ead2825a38",tooltip="Pasa los valores del tablero gráfico al tablero lógico. "];
+}

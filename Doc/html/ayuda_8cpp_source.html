@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
+<title>Sudoku: Fichero Fuente C:/Users/Usuario/Documents/GitHub/ProyectoSudoku/ayuda.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Sudoku
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.4 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&#160;relacionadas</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">C:/Users/Usuario/Documents/GitHub/ProyectoSudoku/ayuda.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ayuda_8cpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ayuda_8h.html">ayuda.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ui__ayuda_8h.html">ui_ayuda.h</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="code" href="class_ayuda.html#ae7f651d8d258d445167ba08d7c4c2ba5">    4</a></span>&#160;<a class="code" href="class_ayuda.html#ae7f651d8d258d445167ba08d7c4c2ba5">Ayuda::Ayuda</a>(QWidget *parent) :</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    QMainWindow(parent),</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    ui(new Ui::<a class="code" href="class_ayuda.html">Ayuda</a>)</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    ui-&gt;<a class="code" href="class_ui___ayuda.html#a6a35de68c800baf50ec7ea4fabf6948a">setupUi</a>(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    setWindowTitle(<span class="stringliteral">&quot;Ayuda&quot;</span>);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    setWindowIcon(QIcon(<span class="stringliteral">&quot;Imagenes/logo.jpg&quot;</span>));</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="class_ayuda.html#acec447348952c9dd9d9455ee0ec3f537" title="Establece una imagen de fondo. Coloca como background una imagen previamente cargada en la ventana &#39;A...">setBackgroundImage</a>();</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    setFixedSize(width(),height());</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="class_ayuda.html#aab7443933f8a2613552749048c4ecbf5">   15</a></span>&#160;<a class="code" href="class_ayuda.html#aab7443933f8a2613552749048c4ecbf5">Ayuda::~Ayuda</a>()</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">delete</span> ui;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="class_ayuda.html#acec447348952c9dd9d9455ee0ec3f537">   20</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_ayuda.html#acec447348952c9dd9d9455ee0ec3f537" title="Establece una imagen de fondo. Coloca como background una imagen previamente cargada en la ventana &#39;A...">Ayuda::setBackgroundImage</a>(){</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    QPixmap bg(<span class="stringliteral">&quot;Imagenes/yingyangsudoku.jpg&quot;</span>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    QPalette p(palette());</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    p.setBrush(QPalette::Background, bg);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    setAutoFillBackground(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    setPalette(p);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Lunes, 8 de Julio de 2013 01:24:33 para Sudoku por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.4
+</small></address>
+</body>
+</html>

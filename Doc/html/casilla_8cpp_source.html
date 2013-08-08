@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
+<title>Sudoku: Fichero Fuente C:/Users/Usuario/Documents/GitHub/ProyectoSudoku/casilla.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Sudoku
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.4 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&#160;relacionadas</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">C:/Users/Usuario/Documents/GitHub/ProyectoSudoku/casilla.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="casilla_8cpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="casilla_8h.html">casilla.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="code" href="class_casilla.html#a3ce9aac3825a3bc59d574572777826e1">    3</a></span>&#160;<a class="code" href="class_casilla.html#a3ce9aac3825a3bc59d574572777826e1">Casilla::Casilla</a>(<span class="keywordtype">int</span> cont, <span class="keywordtype">int</span> f, <span class="keywordtype">int</span> c, <span class="keywordtype">int</span> reg){</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    contenido=cont;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    fila=f;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    columna=c;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    region=reg;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    ocupada=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    modificable=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    setMinimumSize(50,50);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="class_casilla.html#ae77388cc9434142b2a71f3f7b31fad06" title="Funcion que asigna la imagen del numero que está en el tablero al QLabel. ">setGrafic</a>(cont);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    setVisible(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//GETTERS</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="class_casilla.html#add0135ca5142e6239c906bd0d841e940">   17</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_casilla.html#add0135ca5142e6239c906bd0d841e940">Casilla::getContenido</a>(){</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;   <span class="keywordflow">return</span> this-&gt;contenido;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="class_casilla.html#a615db903b0f88706b791249ba01a9c5e">   20</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_casilla.html#a615db903b0f88706b791249ba01a9c5e">Casilla::getFila</a>(){</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">return</span> this-&gt;fila;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="class_casilla.html#a9a3e3e83c8ed143f80a91e6e4ebb53a4">   23</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_casilla.html#a9a3e3e83c8ed143f80a91e6e4ebb53a4">Casilla::getColumna</a>(){</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">return</span> this-&gt;columna;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="class_casilla.html#ae3b07d4ccf1e9b713b1f7b1cc921d2f7">   26</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_casilla.html#ae3b07d4ccf1e9b713b1f7b1cc921d2f7">Casilla::getRegion</a>(){</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;   <span class="keywordflow">return</span> this-&gt;region;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="class_casilla.html#a50ec416f158a95dbbc5c04ecb3bb55cc">   29</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_casilla.html#a50ec416f158a95dbbc5c04ecb3bb55cc">Casilla::isOcupada</a>(){</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">return</span> this-&gt;ocupada;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="class_casilla.html#a5443768c1455bb02d85bd6d9c17420e1">   32</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_casilla.html#a5443768c1455bb02d85bd6d9c17420e1">Casilla::isModificable</a>(){</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">return</span> this-&gt;modificable;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//SETTERS</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="class_casilla.html#a3cb846c5a157a8c8ac2db061fe2daa8c">   37</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_casilla.html#a3cb846c5a157a8c8ac2db061fe2daa8c">Casilla::setContenido</a>(<span class="keywordtype">int</span> cont){</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    this-&gt;contenido=cont;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="class_casilla.html#aec6e065c7466302e43f684d8bfcbb161">   40</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_casilla.html#aec6e065c7466302e43f684d8bfcbb161">Casilla::setFila</a>(<span class="keywordtype">int</span> f){</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    this-&gt;fila=f;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="class_casilla.html#aa8023e9c5e88bc0628c58433cea6dfc6">   43</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_casilla.html#aa8023e9c5e88bc0628c58433cea6dfc6">Casilla::setColumna</a>(<span class="keywordtype">int</span> c){</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    this-&gt;columna=c;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="class_casilla.html#acf62a2e44258ee9845a6a5cf2e805b74">   46</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_casilla.html#acf62a2e44258ee9845a6a5cf2e805b74">Casilla::setRegion</a>(<span class="keywordtype">int</span> r){</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    this-&gt;region=r;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="class_casilla.html#aca80f6cba573688d10c1a78f13e0d377">   49</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_casilla.html#aca80f6cba573688d10c1a78f13e0d377">Casilla::setOcupada</a>(<span class="keywordtype">bool</span> d){</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    this-&gt;ocupada=d;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="class_casilla.html#ae482475002ad952e0284771d6c5a6879">   52</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_casilla.html#ae482475002ad952e0284771d6c5a6879">Casilla::setModificable</a>(<span class="keywordtype">bool</span> m){</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    this-&gt;modificable=m;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="class_casilla.html#ad1f3c8972a3490213b6d7c055597ab95">   56</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_casilla.html#ad1f3c8972a3490213b6d7c055597ab95" title="Ubica la región específica donde se ubica la casilla. ">Casilla::buscarRegion</a>(<span class="keywordtype">int</span> f, <span class="keywordtype">int</span> c){</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span>(f&gt;=1 &amp;&amp; f&lt;=3){</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span>(c&gt;=1 &amp;&amp; c&lt;=3) <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span>(c&gt;=4 &amp;&amp; c&lt;=6) <span class="keywordflow">return</span> 2;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">if</span>(c&gt;=6 &amp;&amp; c&lt;=9) <span class="keywordflow">return</span> 3;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span>(f&gt;=4 &amp;&amp; f&lt;=6){</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">if</span>(c&gt;=1 &amp;&amp; c&lt;=3) <span class="keywordflow">return</span> 4;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">if</span>(c&gt;=4 &amp;&amp; c&lt;=6) <span class="keywordflow">return</span> 5;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">if</span>(c&gt;=6 &amp;&amp; c&lt;=9) <span class="keywordflow">return</span> 6;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span>(f&gt;=7 &amp;&amp; f&lt;=9){</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">if</span>(c&gt;=1 &amp;&amp; c&lt;=3) <span class="keywordflow">return</span> 7;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">if</span>(c&gt;=4 &amp;&amp; c&lt;=6) <span class="keywordflow">return</span> 8;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">if</span>(c&gt;=6 &amp;&amp; c&lt;=9) <span class="keywordflow">return</span> 9;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="code" href="class_casilla.html#ae77388cc9434142b2a71f3f7b31fad06">   74</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_casilla.html#ae77388cc9434142b2a71f3f7b31fad06" title="Funcion que asigna la imagen del numero que está en el tablero al QLabel. ">Casilla::setGrafic</a>(<span class="keywordtype">int</span> i){</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">//Funcion que asigna la imagen del numero al QLabel</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">switch</span> (i) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">case</span> 0:</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        this-&gt;setPixmap(QPixmap(<span class="stringliteral">&quot;Imagenes/0.jpg&quot;</span>));</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">case</span> 1:</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        this-&gt;setPixmap(QPixmap(<span class="stringliteral">&quot;Imagenes/1.jpg&quot;</span>));</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">case</span> 2:</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        this-&gt;setPixmap(QPixmap(<span class="stringliteral">&quot;Imagenes/2.jpg&quot;</span>));</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">case</span> 3:</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        this-&gt;setPixmap(QPixmap(<span class="stringliteral">&quot;Imagenes/3.jpg&quot;</span>));</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">case</span> 4:</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        this-&gt;setPixmap(QPixmap(<span class="stringliteral">&quot;Imagenes/4.jpg&quot;</span>));</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">case</span> 5:</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        this-&gt;setPixmap(QPixmap(<span class="stringliteral">&quot;Imagenes/5.jpg&quot;</span>));</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">case</span> 6:</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        this-&gt;setPixmap(QPixmap(<span class="stringliteral">&quot;Imagenes/6.jpg&quot;</span>));</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">case</span> 7:</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        this-&gt;setPixmap(QPixmap(<span class="stringliteral">&quot;Imagenes/7.jpg&quot;</span>));</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">case</span> 8:</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        this-&gt;setPixmap(QPixmap(<span class="stringliteral">&quot;Imagenes/8.jpg&quot;</span>));</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">case</span> 9:</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        this-&gt;setPixmap(QPixmap(<span class="stringliteral">&quot;Imagenes/9.jpg&quot;</span>));</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="code" href="class_casilla.html#a3fa8dd35706d992df3f847fa9ef85c8f">  112</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_casilla.html#a3fa8dd35706d992df3f847fa9ef85c8f" title="Funcion que asigna la imagen del número que está en el teclado al QLabel. ">Casilla::setGrafic2</a>(<span class="keywordtype">int</span> i){</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="comment">//Funcion que asigna la imagen del numero al QLabel</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">switch</span> (i) {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">case</span> 1:</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        this-&gt;setPixmap(QPixmap(<span class="stringliteral">&quot;Imagenes/ds1.jpg&quot;</span>));</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">case</span> 2:</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        this-&gt;setPixmap(QPixmap(<span class="stringliteral">&quot;Imagenes/ds2.jpg&quot;</span>));</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">case</span> 3:</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        this-&gt;setPixmap(QPixmap(<span class="stringliteral">&quot;Imagenes/ds3.jpg&quot;</span>));</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">case</span> 4:</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        this-&gt;setPixmap(QPixmap(<span class="stringliteral">&quot;Imagenes/ds4.jpg&quot;</span>));</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">case</span> 5:</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        this-&gt;setPixmap(QPixmap(<span class="stringliteral">&quot;Imagenes/ds5.jpg&quot;</span>));</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">case</span> 6:</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        this-&gt;setPixmap(QPixmap(<span class="stringliteral">&quot;Imagenes/ds6.jpg&quot;</span>));</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">case</span> 7:</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        this-&gt;setPixmap(QPixmap(<span class="stringliteral">&quot;Imagenes/ds7.jpg&quot;</span>));</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">case</span> 8:</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        this-&gt;setPixmap(QPixmap(<span class="stringliteral">&quot;Imagenes/ds8.jpg&quot;</span>));</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordflow">case</span> 9:</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        this-&gt;setPixmap(QPixmap(<span class="stringliteral">&quot;Imagenes/ds9.jpg&quot;</span>));</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="code" href="class_casilla.html#a70a5f5d3a7fedf57d02c0d56a07d5422">  146</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_casilla.html#a70a5f5d3a7fedf57d02c0d56a07d5422">Casilla::mousePressEvent</a>(QMouseEvent *ev){</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    emit <a class="code" href="class_casilla.html#acd84dd28ba04eb801f1368d627adbd12">clickedChange</a>(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Lunes, 8 de Julio de 2013 01:24:33 para Sudoku por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.4
+</small></address>
+</body>
+</html>

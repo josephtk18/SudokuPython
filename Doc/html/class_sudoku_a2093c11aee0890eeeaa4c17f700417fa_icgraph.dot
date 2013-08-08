@@ -1,0 +1,11 @@
+digraph "Sudoku::changeSelected"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Sudoku::changeSelected",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Sudoku::inicializarTablasUI",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sudoku.html#af4ff5bf835aa66d12486194996458499",tooltip="Inicializa el tablero gráfico. "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Sudoku::Sudoku",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sudoku.html#add26172d727a99b29e4cc1c99d17ead4"];
+}

@@ -1,0 +1,19 @@
+digraph "Representación gráfica de la clase"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="QMainWindow",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="AcercaDe",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_acerca_de.html"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Ayuda",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_ayuda.html"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Estadisticas",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_estadisticas.html"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Sudoku",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sudoku.html"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Ventana_Jugar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_ventana___jugar.html"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Ventana_principal",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_ventana__principal.html"];
+}

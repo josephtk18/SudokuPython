@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
+<title>Sudoku: Fichero Fuente C:/Users/Usuario/Documents/GitHub/ProyectoSudoku/estadisticas.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Sudoku
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.4 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&#160;relacionadas</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">C:/Users/Usuario/Documents/GitHub/ProyectoSudoku/estadisticas.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="estadisticas_8cpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="estadisticas_8h.html">estadisticas.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ui__estadisticas_8h.html">ui_estadisticas.h</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="code" href="class_estadisticas.html#a7dc0cf1c51d2f78d998cdd72740f2ee8">    5</a></span>&#160;<a class="code" href="class_estadisticas.html#a7dc0cf1c51d2f78d998cdd72740f2ee8">Estadisticas::Estadisticas</a>(QWidget *parent) :</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    QMainWindow(parent),</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    ui(new Ui::<a class="code" href="class_estadisticas.html">Estadisticas</a>)</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    ui-&gt;<a class="code" href="class_ui___estadisticas.html#a5c4ba8918b7de78750ad7b261aa0e0a9">setupUi</a>(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    setWindowTitle(<span class="stringliteral">&quot;Estadísticas&quot;</span>);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    setWindowIcon(QIcon(<span class="stringliteral">&quot;Imagenes/logo.jpg&quot;</span>));</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="class_estadisticas.html#ac5c0395b32af46aa7018240ed36b7086" title="Coloca como fondo de ventana una imagen. ">setBackgroundImage</a>();</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    setFixedSize(width(),height());</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    QString ganadores=<a class="code" href="class_estadisticas.html#a456d911094261320b91058626f2ec47a" title="Carga los ganadores guardados previamente. ">cargarGanadores</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="class_estadisticas.html#a888d64eb9cace5ee9c81c38375e36f87" title="Coloca los ganadores en la venta &#39;Estadísticas&#39;. ">anadirGanadores</a>(ganadores);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="class_estadisticas.html#a5b202f46ca90c52dda33046d7dfa7895">   19</a></span>&#160;<a class="code" href="class_estadisticas.html#a5b202f46ca90c52dda33046d7dfa7895">Estadisticas::~Estadisticas</a>()</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">delete</span> ui;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="class_estadisticas.html#ac5c0395b32af46aa7018240ed36b7086">   24</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_estadisticas.html#ac5c0395b32af46aa7018240ed36b7086" title="Coloca como fondo de ventana una imagen. ">Estadisticas::setBackgroundImage</a>(){</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    QPixmap bg(<span class="stringliteral">&quot;Imagenes/yingyangsudoku.jpg&quot;</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    QPalette p(palette());</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    p.setBrush(QPalette::Background, bg);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    setAutoFillBackground(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    setPalette(p);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="class_estadisticas.html#a456d911094261320b91058626f2ec47a">   32</a></span>&#160;QString <a class="code" href="class_estadisticas.html#a456d911094261320b91058626f2ec47a" title="Carga los ganadores guardados previamente. ">Estadisticas::cargarGanadores</a>(){</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    QString ganadores;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    QFile archivo(<span class="stringliteral">&quot;ganadores.txt&quot;</span>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span> (archivo.exists(<span class="stringliteral">&quot;ganadores.txt&quot;</span>)){</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        archivo.open(QFile::ReadOnly);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        QTextStream stream(&amp;archivo);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        ganadores=stream.readAll();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    archivo.close();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> ganadores;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="class_estadisticas.html#a888d64eb9cace5ee9c81c38375e36f87">   44</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_estadisticas.html#a888d64eb9cace5ee9c81c38375e36f87" title="Coloca los ganadores en la venta &#39;Estadísticas&#39;. ">Estadisticas::anadirGanadores</a>(QString g){</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    ui-&gt;<a class="code" href="class_ui___estadisticas.html#a7199ee70350a76afc0f6165a9c07daff">ganadores</a>-&gt;setText(g);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Lunes, 8 de Julio de 2013 01:24:33 para Sudoku por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.4
+</small></address>
+</body>
+</html>

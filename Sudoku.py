@@ -361,7 +361,7 @@ class Sudoku(QtGui.QMainWindow):
             for i in range(3):
                 for j in range(3):
                     if(self.validacion(i,j)==False): valido=False
-            messageBox = ctypes.windll.user32.MessageBoxW             
+            messageBox = ctypes.windll.user32.MessageBoxA             
             if(valido==False): 
                 messageBox(None,"El tablero esta mal llenado", "Error", 0)
             else:
@@ -485,13 +485,13 @@ class Sudoku(QtGui.QMainWindow):
     def validarFila(self,fila,columna):
         for i in range(9):
             if(i!=columna):
-                if(self.matriz[fila][i]==self.matriz[fila][columna] | self.matriz[fila][i]>9): return False
+                if(self.matriz[fila][i]==self.matriz[fila][columna] or self.matriz[fila][i]>9): return False
         return True
     
     def validarColumna(self,fila,columna):
         for i in range(9):
             if(i!=fila):
-                if(self.matriz[i][columna]==self.matriz[fila][columna] | self.matriz[i][columna]>9): return False;
+                if(self.matriz[i][columna]==self.matriz[fila][columna] or self.matriz[i][columna]>9): return False;
         return True
     
     def validarBloque(self,fila,columna):
@@ -504,7 +504,7 @@ class Sudoku(QtGui.QMainWindow):
         
         for i in range(rangoi):
             for j in range(rangoj):
-                if((i==fila & j==columna)==False):
+                if((i==fila and j==columna)==False):
                     if(self.matriz[fila][columna]==self.matriz[i][j]): return False
         return True
     

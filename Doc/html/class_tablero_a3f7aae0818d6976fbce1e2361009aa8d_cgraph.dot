@@ -1,0 +1,21 @@
+digraph "Tablero::generarTablero"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Tablero::generarTablero",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Tablero::randInt",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_tablero.html#ae0f3eeb6b6487599025d6a0d10103dbd"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Tablero::hayRepetidoFila",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_tablero.html#ae59075a16637493f50a7f589eead974f",tooltip="Verifica si hay un número repetido en la fila. "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Casilla::getFila",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_casilla.html#a615db903b0f88706b791249ba01a9c5e"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Casilla::setContenido",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_casilla.html#a3cb846c5a157a8c8ac2db061fe2daa8c"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Casilla::setOcupada",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_casilla.html#aca80f6cba573688d10c1a78f13e0d377"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Tablero::pasarBloquesAFila",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_tablero.html#aae40ad704122ec5638f2ea3a7d46f37d",tooltip="Ubica la posicion del bloque y lo pasa a la fila. "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Tablero::cambiarOrdenBloques",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_tablero.html#ab225abebb4923eab2e299a45e8e95d31",tooltip="Cambia de forma aleatorioa los 9 bloques del tablero. "];
+}

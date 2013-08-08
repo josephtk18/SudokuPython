@@ -1,0 +1,17 @@
+digraph "Sudoku::iniciarTeclado"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Sudoku::iniciarTeclado",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Sudoku::asignToSelect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sudoku.html#a18ec0b7d6ff194ff7a16cee257cc6a00"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Casilla::isModificable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_casilla.html#a5443768c1455bb02d85bd6d9c17420e1"];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Digito::getDigito",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_digito.html#a46a57afbe4d7364f2867ace64c99ee41"];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Casilla::setContenido",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_casilla.html#a3cb846c5a157a8c8ac2db061fe2daa8c"];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Casilla::setGrafic2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_casilla.html#a3fa8dd35706d992df3f847fa9ef85c8f",tooltip="Funcion que asigna la imagen del número que está en el teclado al QLabel. "];
+}

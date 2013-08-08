@@ -1,0 +1,17 @@
+digraph "Estadisticas::Estadisticas"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Estadisticas::Estadisticas",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Ui_Estadisticas::setupUi",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_ui___estadisticas.html#a5c4ba8918b7de78750ad7b261aa0e0a9"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Ui_Estadisticas::retranslateUi",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_ui___estadisticas.html#abee1a8375798b88c509f2163e9f7f91f"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Estadisticas::setBackground\lImage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_estadisticas.html#ac5c0395b32af46aa7018240ed36b7086",tooltip="Coloca como fondo de ventana una imagen. "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Estadisticas::cargarGanadores",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_estadisticas.html#a456d911094261320b91058626f2ec47a",tooltip="Carga los ganadores guardados previamente. "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Estadisticas::anadirGanadores",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_estadisticas.html#a888d64eb9cace5ee9c81c38375e36f87",tooltip="Coloca los ganadores en la venta &#39;Estadísticas&#39;. "];
+}

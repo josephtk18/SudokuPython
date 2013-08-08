@@ -1,0 +1,13 @@
+digraph "Ayuda::Ayuda"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Ayuda::Ayuda",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Ui_Ayuda::setupUi",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_ui___ayuda.html#a6a35de68c800baf50ec7ea4fabf6948a"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Ui_Ayuda::retranslateUi",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_ui___ayuda.html#af3384a5e450e60d027ac2a210e914422"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Ayuda::setBackgroundImage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_ayuda.html#acec447348952c9dd9d9455ee0ec3f537",tooltip="Establece una imagen de fondo. Coloca como background una imagen previamente cargada en la ventana &#39;A..."];
+}
