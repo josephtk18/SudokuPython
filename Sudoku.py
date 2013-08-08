@@ -55,7 +55,7 @@ class Sudoku(QtGui.QMainWindow):
         self.time.setHMS(0,0,0,0)
         self.timer=QtCore.QTimer()
         
-        self.connect(self.timer,QtCore.SIGNAL("timeout"),self.showTime)
+        self.connect(self.timer,QtCore.SIGNAL("timeout()"),self.showTime)
         
         self.seconds=0
         
@@ -560,7 +560,7 @@ class Sudoku(QtGui.QMainWindow):
         
         tiempo = root[0][2].text
         self.seconds = int(tiempo)
-        self.newTime = self.time.addSecs(self.seconds)
+        '''self.newTime = self.time.addSecs(self.seconds)
         self.text2=self.newTime.toString("hh:mm:ss")
-        self.num.display(self.text2)
+        self.num.display(self.text2)'''
         
